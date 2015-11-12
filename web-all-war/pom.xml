@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-boot-ear-skinny-war</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>web-all-war</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>web1</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example</groupId>
+                    <artifactId>servlet-container-initializer-meta-inf</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.example</groupId>
+                    <artifactId>common-spring-boot-app</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>web2</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.example</groupId>
+                    <artifactId>servlet-container-initializer-meta-inf</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.example</groupId>
+                    <artifactId>common-spring-boot-app</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.example</groupId>-->
+            <!--<artifactId>common-spring-boot-app</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

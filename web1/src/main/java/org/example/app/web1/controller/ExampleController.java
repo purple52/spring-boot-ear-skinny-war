@@ -1,4 +1,4 @@
-package org.example.app.controller;
+package org.example.app.web1.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +8,7 @@ public class ExampleController {
 
     @RequestMapping("/")
     public String index() {
-        return "Web2";
+        return "Web1";
     }
 
 }
