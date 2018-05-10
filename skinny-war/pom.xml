@@ -7,12 +7,30 @@
         <artifactId>spring-boot-ear-skinny-war</artifactId>
         <version>2.0.1</version>
     </parent>
-    <artifactId>spring-boot-web1</artifactId>
+    <artifactId>spring-boot-skinny-war</artifactId>
     <packaging>war</packaging>
 
-    <name>Spring Boot - Web Application 1 (WAR)</name>
+    <name>Spring Boot - Skinny Web Application (WAR)</name>
+    <description>Skinny WAR that is external but depends on a EAR.</description>
 
     <dependencies>
+        <dependency>
+            <!-- Platform is provided by the jboss-deployment-structure.xml -->
+            <!-- Dependencies are excluded from this dependency, to prevent accidental use -->
+            <!-- of transitive dependencies of the platform -->
+            <groupId>org.example</groupId>
+            <artifactId>spring-boot-platform</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+            <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>servlet-container-initializer-meta-inf</artifactId>
@@ -73,5 +91,39 @@
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>${classpath}</packagingExcludes>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>../platform/target/classes/war.excludes.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
