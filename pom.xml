@@ -3,25 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>spring-boot-ear-skinny-war</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>2.0.1</version>
+
+    <name>Spring Boot EAR And Skinny WARs Examples</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <compiler.source>1.8</compiler.source>
         <compiler.target>1.8</compiler.target>
+
+        <versions.spring.boot>2.0.1.RELEASE</versions.spring.boot>
+        <versions.com.fasterxml>2.9.5</versions.com.fasterxml>
     </properties>
 
     <modules>
+        <module>ear</module>
+        <module>servlet-container-initializer-meta-inf</module>
         <module>web1</module>
         <module>web2</module>
-        <module>web-all</module>
-        <module>servlet-container-initializer-meta-inf</module>
-        <module>common-spring-boot-app</module>
     </modules>
 
     <dependencyManagement>
@@ -29,7 +33,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.2.6.RELEASE</version>
+                <version>${versions.spring.boot}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -39,6 +43,42 @@
                 <version>1.0.0.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-xml-provider</artifactId>
+                <version>${versions.com.fasterxml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-cbor</artifactId>
+                <version>${versions.com.fasterxml}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
