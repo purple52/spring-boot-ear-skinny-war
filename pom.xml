@@ -23,6 +23,9 @@
 
     <modules>
         <module>ear</module>
+	    <module>platform</module>
+        <module>skinny-ear</module>
+        <module>skinny-war</module>
         <module>servlet-container-initializer-meta-inf</module>
         <module>web1</module>
         <module>web2</module>
