@@ -42,6 +42,9 @@ we show that you can use Spring Boot 2.0.1 in an EAR with Skinny WARs in WildFly
 Tested Versions:
 - WildFly 8.2.1.Final
 - WildFly 9.0.2.Final
+- WildFly 10.1.0.Final
+- WildFly 11.0.0.Final
+- WildFly 12.0.0.Final
 
 ## Further work
 
@@ -51,7 +54,7 @@ I have not yet found a solution.
 
 ## Install
 
-1. Download WildFly 8.2.1.Final or WildFly 9.0.2.Final
+1. Download WildFly 8.2.1.Final+
 2. Build the project using `mvn clean package`
 3. Deploy the spring-boot-ear-2.0.1.ear file to WildFly.
 
