@@ -36,8 +36,12 @@ application class and included it as a common JAR.
 Since the Servlet 3.0 spec make externalizing dependencies out of the war troublesome
 we will instead use a method known to allow Spring Boot 1.x run within a Servlet 3.0 container.
 
-Using a fork of [ddcruver/spring-boot-legacy](https://github.com/ddcruver/spring-boot-legacy) that has been updated to Spring Boot 2.0.1 
-we show that you can use Spring Boot 2.0.1 in an EAR with Skinny WARs in WildFly.
+Using a fork of [dyser/spring-boot-legacy](https://github.com/dsyer/spring-boot-legacy) at [ddcruver/spring-boot-legacy](https://github.com/ddcruver/spring-boot-legacy) that has been updated to Spring Boot 2.0.2 
+we show that you can use Spring Boot 2.0.2 in an EAR with Skinny WARs in WildFly.
+
+UPDATES: A pull request was made to update [dyser/spring-boot-legacy](https://github.com/dsyer/spring-boot-legacy) to support Spring Boot 2.0.
+This pull request was accepted but an additional pull request was made to address more issues discovered in testing. 
+See https://github.com/dsyer/spring-boot-legacy/issues/25 and https://github.com/dsyer/spring-boot-legacy/pull/26.
 
 Tested Versions:
 - WildFly 8.2.1.Final

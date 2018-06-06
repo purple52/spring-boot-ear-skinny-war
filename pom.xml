@@ -17,8 +17,9 @@
         <compiler.source>1.8</compiler.source>
         <compiler.target>1.8</compiler.target>
 
-        <versions.spring.boot>2.0.1.RELEASE</versions.spring.boot>
+        <versions.spring.boot>2.0.2.RELEASE</versions.spring.boot>
         <versions.com.fasterxml>2.9.5</versions.com.fasterxml>
+        <versions.spring.boot.legacy>2.0.0.BUILD-SNAPSHOT</versions.spring.boot.legacy>
     </properties>
 
     <modules>
