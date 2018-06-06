@@ -7,24 +7,12 @@
         <artifactId>spring-boot-ear-skinny-war</artifactId>
         <version>2.0.1</version>
     </parent>
-    <artifactId>spring-boot-web1</artifactId>
+    <artifactId>spring-boot-web0</artifactId>
     <packaging>war</packaging>
 
-    <name>Spring Boot - Web Application 1 (WAR)</name>
+    <name>Spring Boot - Web Application 0 (WAR)</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>servlet-container-initializer-meta-inf</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-legacy</artifactId>
-            <version>${versions.spring.boot.legacy}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
